@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Ticket & View Ticket</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .column {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column">
+            <h2>Book Ticket</h2>
+            <form action="/bookTicket" method="post" th:object="${passenger}">
+                <table>
+					
+					<tr>
+						<td>Name:</td>
+						<td><input type="text" th:field="*{name}"/></td>
+					</tr>
+					<tr>
+						<td>Email:</td>
+						<td><input type="email" th:field="*{email}"/></td>
+					</tr>
+					<tr>
+						<td>Gender:</td>
+						<td><input type="text" th:field="*{gender}"/></td>
+					</tr>
+					<tr>
+						<td>Source:</td>
+						<td><input type="text" th:field="*{source}"/></td>
+					</tr>
+					<tr>
+						<td>Destination:</td>
+						<td><input type="text" th:field="*{destination}"/></td>
+					</tr>
+					
+					<tr>
+						<td>Doj:</td>
+						<td><input type="number" th:field="*{doj}"/></td>
+					</tr>
+					
+					<tr>
+						<td>TrainNumber:</td>
+						<td><input type="number" th:field="*{trainNum}"/></td>
+					</tr>
+					
+					<tr>
+						<td></td>
+						<td><input type="submit" value="BookTicket"/></td>
+					</tr>
+				</table>
+				<a href="/getTickets" >View All Tickets</a>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>
